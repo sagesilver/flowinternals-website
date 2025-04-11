@@ -1,0 +1,77 @@
+
+import React from "react";
+import { cn } from "@/lib/utils";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
+interface CourseCardProps {
+  title: string;
+  description: string;
+  image: string;
+  level: "Beginner" | "Intermediate" | "Advanced";
+  duration: string;
+  className?: string;
+}
+
+const CourseCard = ({
+  title,
+  description,
+  image,
+  level,
+  duration,
+  className,
+}: CourseCardProps) => {
+  return (
+    <Card className={cn("overflow-hidden h-full", className)}>
+      <div className="aspect-video overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+        />
+      </div>
+      <CardHeader className="p-4">
+        <div className="flex justify-between items-center mb-2">
+          <Badge
+            variant="outline"
+            className={cn(
+              "px-2 py-1 text-xs font-semibold",
+              level === "Beginner" && "bg-green-50 text-green-700 border-green-200",
+              level === "Intermediate" && "bg-blue-50 text-blue-700 border-blue-200",
+              level === "Advanced" && "bg-purple-50 text-purple-700 border-purple-200"
+            )}
+          >
+            {level}
+          </Badge>
+          <span className="text-sm text-muted-foreground">{duration}</span>
+        </div>
+        <h3 className="text-xl font-semibold leading-tight">{title}</h3>
+      </CardHeader>
+      <CardContent className="p-4 pt-0">
+        <p className="text-sm text-muted-foreground line-clamp-2">{description}</p>
+      </CardContent>
+      <CardFooter className="p-4 pt-0">
+        <div className="flex items-center text-dynamous-600 text-sm font-medium">
+          Learn more
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="ml-1 h-4 w-4"
+          >
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </div>
+      </CardFooter>
+    </Card>
+  );
+};
+
+export default CourseCard;
