@@ -45,10 +45,10 @@ const CourseCard = ({
           </Badge>
           <span className="text-sm text-muted-foreground">{duration}</span>
         </div>
-        <h3 className="text-xl font-semibold leading-tight">{title}</h3>
+        <h3 className="text-xl font-semibold leading-tight text-white">{title}</h3>
       </CardHeader>
       <CardContent className="p-4 pt-0">
-        <p className="text-sm text-muted-foreground line-clamp-2">{description}</p>
+        <p className="text-sm text-gray-300 line-clamp-2">{description}</p>
       </CardContent>
       <CardFooter className="p-4 pt-0">
         <div className="flex items-center text-dynamous-400 text-sm font-medium hover:text-dynamous-300 transition-colors">

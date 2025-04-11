@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background">
       {/* Header */}
-      <header className="border-b sticky top-0 z-10 bg-white/95 backdrop-blur-sm">
+      <header className="border-b border-dynamous-900/30 sticky top-0 z-10 bg-background/95 backdrop-blur-sm">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center">
             <img 
@@ -19,19 +19,19 @@ const Index = () => {
             />
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#" className="text-sm font-medium hover:text-dynamous-600 transition-colors">
+            <a href="#" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
               Home
             </a>
-            <a href="#" className="text-sm font-medium hover:text-dynamous-600 transition-colors">
+            <a href="#" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
               Courses
             </a>
-            <a href="#" className="text-sm font-medium hover:text-dynamous-600 transition-colors">
+            <a href="#" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
               Features
             </a>
-            <a href="#" className="text-sm font-medium hover:text-dynamous-600 transition-colors">
+            <a href="#" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
               Testimonials
             </a>
-            <a href="#" className="text-sm font-medium hover:text-dynamous-600 transition-colors">
+            <a href="#" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
               Pricing
             </a>
           </nav>
@@ -97,7 +97,7 @@ const Index = () => {
       </section>
 
       {/* Featured Courses Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-background/80">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center text-center mb-12">
             <h2 className="gradient-text mb-4">Featured Courses</h2>
@@ -137,7 +137,7 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20">
+      <section className="py-20 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center text-center mb-12">
             <h2 className="gradient-text mb-4">Why Choose flowinternals?</h2>
@@ -289,7 +289,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-background/80">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center text-center mb-12">
             <h2 className="gradient-text mb-4">Student Success Stories</h2>
@@ -360,7 +360,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300">
+      <footer className="bg-background/90 text-gray-300 border-t border-dynamous-900/30">
         <div className="container px-4 md:px-6 py-12">
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
             <div>
@@ -493,12 +493,12 @@ const Index = () => {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center">
+          <div className="border-t border-dynamous-900/30 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center">
             <p className="text-sm opacity-70">
               © 2025 flowinternals Academy. All rights reserved.
             </p>
             <div className="mt-4 sm:mt-0">
-              <select className="bg-gray-800 text-gray-300 rounded px-3 py-1 text-sm border border-gray-700 focus:outline-none focus:ring-1 focus:ring-dynamous-500">
+              <select className="bg-dynamous-900/50 text-gray-300 rounded px-3 py-1 text-sm border border-dynamous-800/30 focus:outline-none focus:ring-1 focus:ring-dynamous-500">
                 <option>English (US)</option>
                 <option>Spanish</option>
                 <option>French</option>

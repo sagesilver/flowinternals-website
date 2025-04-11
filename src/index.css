@@ -62,7 +62,7 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-dynamous-700 to-dynamous-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-dynamous-400 to-dynamous-500 bg-clip-text text-transparent;
   }
 }
 
@@ -72,11 +72,11 @@
   }
   
   .course-card {
-    @apply overflow-hidden rounded-lg border border-border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md hover:shadow-dynamous-600/20;
+    @apply overflow-hidden rounded-lg border border-dynamous-900/30 bg-card/40 text-card-foreground shadow-sm transition-all hover:shadow-md hover:shadow-dynamous-600/20;
   }
   
   .feature-card {
-    @apply flex flex-col rounded-lg bg-card p-6 shadow-sm transition-all hover:shadow-md hover:border-dynamous-800 border border-transparent;
+    @apply flex flex-col rounded-lg bg-card/40 backdrop-blur-sm p-6 shadow-sm transition-all hover:shadow-md hover:border-dynamous-800 border border-dynamous-900/30;
   }
   
   /* Dark theme specific glassmorphism cards */
