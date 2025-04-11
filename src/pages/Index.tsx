@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import CourseCard from "@/components/CourseCard";
@@ -13,7 +12,12 @@ const Index = () => {
       <header className="border-b sticky top-0 z-10 bg-white/95 backdrop-blur-sm">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-dynamous-600">SkillSpark</span>
+            <img 
+              src="/lovable-uploads/103fe709-e839-41cb-8e87-6e69b89a977c.png" 
+              alt="flowinternals logo" 
+              className="h-10 w-auto"
+            />
+            <span className="text-2xl font-bold text-dynamous-600">flowinternals</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
             <a href="#" className="text-sm font-medium hover:text-dynamous-600 transition-colors">
@@ -82,7 +86,7 @@ const Index = () => {
               </div>
             </div>
             <div className="lg:h-[540px] relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-dynamous-600/10 to-dynamous-purple-500/10 rounded-lg" />
+              <div className="absolute inset-0 bg-gradient-to-r from-dynamous-600/10 to-dynamous-500/10 rounded-lg" />
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Students collaborating"
@@ -137,7 +141,7 @@ const Index = () => {
       <section className="py-20">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center text-center mb-12">
-            <h2 className="gradient-text mb-4">Why Choose SkillSpark?</h2>
+            <h2 className="gradient-text mb-4">Why Choose flowinternals?</h2>
             <p className="text-xl text-muted-foreground max-w-3xl">
               Our platform offers a unique learning experience with features designed to help you succeed.
             </p>
@@ -323,7 +327,7 @@ const Index = () => {
                 Ready to accelerate your career?
               </h2>
               <p className="text-lg opacity-90 mb-8 max-w-lg">
-                Join thousands of successful students who have transformed their careers with SkillSpark Academy.
+                Join thousands of successful students who have transformed their careers with flowinternals Academy.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="bg-white text-dynamous-600 hover:bg-gray-100 text-lg h-12 px-6">
@@ -361,7 +365,7 @@ const Index = () => {
         <div className="container px-4 md:px-6 py-12">
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
             <div>
-              <h3 className="text-white text-lg font-bold mb-4">SkillSpark</h3>
+              <h3 className="text-white text-lg font-bold mb-4">flowinternals</h3>
               <p className="text-sm opacity-80 mb-4">
                 Empowering careers through transformative online education.
               </p>
@@ -492,7 +496,7 @@ const Index = () => {
           </div>
           <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center">
             <p className="text-sm opacity-70">
-              © 2025 SkillSpark Academy. All rights reserved.
+              © 2025 flowinternals Academy. All rights reserved.
             </p>
             <div className="mt-4 sm:mt-0">
               <select className="bg-gray-800 text-gray-300 rounded px-3 py-1 text-sm border border-gray-700 focus:outline-none focus:ring-1 focus:ring-dynamous-500">

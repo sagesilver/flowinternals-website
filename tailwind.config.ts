@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,41 +62,41 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom theme colors
+				// Custom theme colors - updating dynamous to flowinternals with emerald green
 				"dynamous": {
-					50: "#f0f7ff",
-					100: "#e0eefe",
-					200: "#c0ddfc",
-					300: "#92c6f8",
-					400: "#5ea5f3",
-					500: "#3785eb",
-					600: "#2563EB", // Primary
-					700: "#1a4bbd",
-					800: "#1d4199",
-					900: "#1e3a7b",
-					950: "#162552",
+					50: "#ecfdf5",
+					100: "#d1fae5",
+					200: "#a7f3d0",
+					300: "#6ee7b7",
+					400: "#34d399",
+					500: "#10b981",
+					600: "#059669", // Primary - emerald green
+					700: "#047857",
+					800: "#065f46",
+					900: "#064e3b",
+					950: "#022c22",
 				},
 				"dynamous-purple": {
-					100: "#e8e8ff",
-					200: "#c8c9ff",
-					300: "#a9aaff",
-					400: "#9293ff",
-					500: "#818CF8", // Secondary
-					600: "#7177f0",
-					700: "#5a60d5",
-					800: "#444bab",
-					900: "#353c85",
+					100: "#d1fae5",
+					200: "#a7f3d0",
+					300: "#6ee7b7",
+					400: "#34d399",
+					500: "#10b981", // Secondary - lighter emerald
+					600: "#059669",
+					700: "#047857",
+					800: "#065f46",
+					900: "#064e3b",
 				},
 				"dynamous-teal": {
-					100: "#d5f9fa",
-					200: "#abf3f4",
-					300: "#5ddde0",
-					400: "#36c2c4",
-					500: "#0F9FA3", // Accent
-					600: "#0a7a7c",
-					700: "#076365",
-					800: "#044b4e",
-					900: "#022e30",
+					100: "#ccfbf1",
+					200: "#99f6e4",
+					300: "#5eead4",
+					400: "#2dd4bf",
+					500: "#14b8a6", // Accent
+					600: "#0d9488",
+					700: "#0f766e",
+					800: "#115e59",
+					900: "#134e4a",
 				},
 			},
 			borderRadius: {
