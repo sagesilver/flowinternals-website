@@ -16,9 +16,9 @@ const FeatureCard = ({
   className,
 }: FeatureCardProps) => {
   return (
-    <div className={cn("feature-card", className)}>
-      <div className="mb-4 text-dynamous-600">{icon}</div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+    <div className={cn("feature-card group", className)}>
+      <div className="mb-4 text-dynamous-600 p-3 bg-dynamous-50 w-fit rounded-lg group-hover:bg-dynamous-100 transition-colors">{icon}</div>
+      <h3 className="text-xl font-semibold mb-2 group-hover:text-dynamous-600 transition-colors">{title}</h3>
       <p className="text-muted-foreground">{description}</p>
     </div>
   );

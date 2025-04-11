@@ -94,20 +94,21 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-dynamous-600 to-dynamous-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-dynamous-700 to-dynamous-500 bg-clip-text text-transparent;
   }
 }
 
 @layer components {
   .hero-button {
-    @apply inline-flex h-12 items-center justify-center rounded-md bg-dynamous-600 px-6 text-lg font-medium text-white shadow transition-colors hover:bg-dynamous-700 focus:outline-none focus:ring-2 focus:ring-dynamous-400 focus:ring-offset-2;
+    @apply inline-flex h-12 items-center justify-center rounded-md bg-dynamous-600 px-6 text-lg font-medium text-white shadow-lg shadow-dynamous-600/30 transition-all hover:bg-dynamous-700 hover:shadow-xl hover:shadow-dynamous-600/40 focus:outline-none focus:ring-2 focus:ring-dynamous-400 focus:ring-offset-2;
   }
   
   .course-card {
-    @apply overflow-hidden rounded-lg border bg-white shadow-sm transition-all hover:shadow-md;
+    @apply overflow-hidden rounded-lg border bg-white shadow-sm transition-all hover:shadow-md hover:shadow-dynamous-100/50;
   }
   
   .feature-card {
-    @apply flex flex-col rounded-lg bg-white p-6 shadow-sm transition-all hover:shadow-md;
+    @apply flex flex-col rounded-lg bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-dynamous-200 border border-transparent;
   }
 }
+

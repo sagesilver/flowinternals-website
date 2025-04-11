@@ -11,13 +11,12 @@ const Index = () => {
       {/* Header */}
       <header className="border-b sticky top-0 z-10 bg-white/95 backdrop-blur-sm">
         <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center">
             <img 
               src="/lovable-uploads/103fe709-e839-41cb-8e87-6e69b89a977c.png" 
               alt="flowinternals logo" 
-              className="h-10 w-auto"
+              className="h-14 w-auto" 
             />
-            <span className="text-2xl font-bold text-dynamous-600">flowinternals</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
             <a href="#" className="text-sm font-medium hover:text-dynamous-600 transition-colors">
@@ -40,7 +39,7 @@ const Index = () => {
             <Button variant="outline" className="hidden md:flex">
               Sign In
             </Button>
-            <Button className="bg-dynamous-600 hover:bg-dynamous-700">
+            <Button className="bg-dynamous-600 hover:bg-dynamous-700 shadow-lg shadow-dynamous-600/20">
               Get Started
             </Button>
           </div>
@@ -62,7 +61,7 @@ const Index = () => {
                 <Button className="hero-button">
                   Explore Courses
                 </Button>
-                <Button variant="outline" size="lg" className="h-12">
+                <Button variant="outline" size="lg" className="h-12 border-dynamous-300 text-dynamous-700 hover:bg-dynamous-50">
                   View Demo
                 </Button>
               </div>
@@ -130,7 +129,7 @@ const Index = () => {
             />
           </div>
           <div className="mt-12 text-center">
-            <Button className="bg-dynamous-600 hover:bg-dynamous-700">
+            <Button className="bg-dynamous-600 hover:bg-dynamous-700 shadow-lg shadow-dynamous-600/20">
               View All Courses
             </Button>
           </div>
@@ -330,7 +329,7 @@ const Index = () => {
                 Join thousands of successful students who have transformed their careers with flowinternals Academy.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-white text-dynamous-600 hover:bg-gray-100 text-lg h-12 px-6">
+                <Button className="bg-white text-dynamous-600 hover:bg-gray-100 text-lg h-12 px-6 shadow-lg">
                   Enroll Now
                 </Button>
                 <Button variant="outline" className="text-white border-white hover:bg-white/10 h-12 px-6">
@@ -339,7 +338,7 @@ const Index = () => {
               </div>
             </div>
             <div className="flex justify-center">
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 max-w-md">
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 max-w-md shadow-xl">
                 <h3 className="text-xl font-semibold mb-2">Get notified about new courses</h3>
                 <p className="opacity-90 mb-4">
                   Be the first to know when we launch new courses and special promotions.
@@ -350,7 +349,7 @@ const Index = () => {
                     placeholder="Enter your email"
                     className="flex h-10 w-full rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/20"
                   />
-                  <Button className="bg-white text-dynamous-600 hover:bg-gray-100">
+                  <Button className="bg-white text-dynamous-600 hover:bg-gray-100 shadow-md">
                     Subscribe
                   </Button>
                 </div>
