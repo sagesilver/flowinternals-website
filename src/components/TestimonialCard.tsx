@@ -19,10 +19,10 @@ const TestimonialCard = ({
   className,
 }: TestimonialCardProps) => {
   return (
-    <Card className={cn("h-full", className)}>
+    <Card className={cn("h-full bg-card/40 backdrop-blur-sm border-dynamous-900/30", className)}>
       <CardContent className="p-6">
         <div className="flex flex-col h-full">
-          <div className="mb-4 text-dynamous-teal-500">
+          <div className="mb-4 text-dynamous-400">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -43,8 +43,8 @@ const TestimonialCard = ({
                 className="w-12 h-12 rounded-full mr-4 object-cover"
               />
             ) : (
-              <div className="w-12 h-12 rounded-full bg-dynamous-100 flex items-center justify-center mr-4">
-                <span className="text-dynamous-600 text-lg font-semibold">
+              <div className="w-12 h-12 rounded-full bg-dynamous-900/70 flex items-center justify-center mr-4">
+                <span className="text-dynamous-400 text-lg font-semibold">
                   {author.charAt(0)}
                 </span>
               </div>

@@ -22,7 +22,7 @@ const CourseCard = ({
   className,
 }: CourseCardProps) => {
   return (
-    <Card className={cn("overflow-hidden h-full", className)}>
+    <Card className={cn("overflow-hidden h-full bg-card/40 backdrop-blur-sm border-dynamous-900/30", className)}>
       <div className="aspect-video overflow-hidden">
         <img
           src={image}
@@ -36,9 +36,9 @@ const CourseCard = ({
             variant="outline"
             className={cn(
               "px-2 py-1 text-xs font-semibold",
-              level === "Beginner" && "bg-green-50 text-green-700 border-green-200",
-              level === "Intermediate" && "bg-blue-50 text-blue-700 border-blue-200",
-              level === "Advanced" && "bg-purple-50 text-purple-700 border-purple-200"
+              level === "Beginner" && "bg-green-950/70 text-green-400 border-green-800/50",
+              level === "Intermediate" && "bg-blue-950/70 text-blue-400 border-blue-800/50",
+              level === "Advanced" && "bg-purple-950/70 text-purple-400 border-purple-800/50"
             )}
           >
             {level}
@@ -51,7 +51,7 @@ const CourseCard = ({
         <p className="text-sm text-muted-foreground line-clamp-2">{description}</p>
       </CardContent>
       <CardFooter className="p-4 pt-0">
-        <div className="flex items-center text-dynamous-600 text-sm font-medium">
+        <div className="flex items-center text-dynamous-400 text-sm font-medium hover:text-dynamous-300 transition-colors">
           Learn more
           <svg
             xmlns="http://www.w3.org/2000/svg"
