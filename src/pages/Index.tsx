@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import CourseCard from "@/components/CourseCard";
@@ -9,13 +10,13 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       {/* Header */}
-      <header className="border-b border-dynamous-900/30 sticky top-0 z-10 bg-background/95 backdrop-blur-sm">
+      <header className="border-b border-dynamous-900/30 sticky top-0 z-10 bg-black backdrop-blur-sm">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/103fe709-e839-41cb-8e87-6e69b89a977c.png" 
+              src="/lovable-uploads/a4fc7853-2ebb-4b66-bb30-8a3a378f59d3.png" 
               alt="flowinternals logo" 
-              className="h-14 w-auto" 
+              className="h-28 w-auto" 
             />
           </div>
           <nav className="hidden md:flex items-center gap-6">
