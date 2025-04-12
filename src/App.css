@@ -7,7 +7,7 @@
 }
 
 .logo {
-  height: 12em; /* Doubled from 6em to make it larger */
+  height: 10.8em; /* Reduced by 10% from 12em */
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
@@ -52,13 +52,14 @@ body {
   color: hsl(210, 40%, 98%);
 }
 
-/* Adjusted header height to accommodate larger logo */
+/* Adjusted header height to accommodate logo */
 header.sticky {
   height: auto;
-  padding: 0.5rem 0;
+  padding: 1rem 0; /* Increased padding to make navigation area larger */
+  min-height: 80px; /* Ensuring minimum height for the navigation bar */
 }
 
 /* Logo sizing in the header */
 header img {
-  max-height: 28px; /* Ensure the logo fits in the navigation area */
+  max-height: 25px; /* Reduced from 28px to make it 10% smaller */
 }

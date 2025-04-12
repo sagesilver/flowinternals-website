@@ -11,15 +11,15 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-background">
       {/* Header */}
       <header className="border-b border-dynamous-900/30 sticky top-0 z-10 bg-black backdrop-blur-sm">
-        <div className="container flex h-16 items-center justify-between">
+        <div className="container flex h-20 items-center justify-between"> {/* Increased height from h-16 to h-20 */}
           <div className="flex items-center">
             <img 
               src="/lovable-uploads/a4fc7853-2ebb-4b66-bb30-8a3a378f59d3.png" 
               alt="flowinternals logo" 
-              className="h-28 w-auto" 
+              className="h-24 w-auto" /* Reduced from h-28 to h-24 (approximately 10% smaller) */
             />
           </div>
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-8"> {/* Increased gap from gap-6 to gap-8 */}
             <a href="#" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
               Home
             </a>
