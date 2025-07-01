@@ -79,6 +79,61 @@ skill-spark-academy-hub/
 - **CSS Custom Properties** - HSL-based color system for theming
 - **Responsive Design** - Mobile-first approach with breakpoint-specific styles
 
+## Content Page Design Pattern
+
+### Legal & Information Pages
+A standardized design pattern has been established for content-heavy pages (Privacy Policy, Terms of Service, About Us, etc.) that ensures consistency and readability while maintaining the site's design principles.
+
+#### Layout Structure
+```typescript
+// Standard content page structure
+<div className="min-h-screen bg-background">
+  {/* Navigation spacer */}
+  <div className="h-24"></div>
+  
+  {/* Header Section */}
+  <section className="bg-gradient-to-br from-dynamous-900/20 via-background to-dynamous-950/30 py-16 border-b border-dynamous-900/30">
+    {/* Page title and description */}
+  </section>
+
+  {/* Content Section */}
+  <section className="py-16">
+    {/* Main content with consistent styling */}
+  </section>
+</div>
+```
+
+#### Design Elements
+- **Header**: Gradient background with page title and description
+- **Content Sections**: Left border accent (`border-l-4 border-dynamous-600`)
+- **Typography**: Hierarchical headings with `text-dynamous-400` for section titles
+- **Spacing**: Consistent `space-y-12` between sections, `space-y-4` within sections
+- **Lists**: Styled with `list-disc list-inside` and consistent indentation
+- **Contact Info**: Highlighted contact details in bordered containers
+- **CTAs**: Bottom call-to-action section with gradient background
+
+#### Color Palette for Content Pages
+- **Background**: `bg-background` (dark theme)
+- **Primary Text**: `text-white` for headers, `text-gray-300` for body
+- **Accent Color**: `text-dynamous-400` for section headings and links
+- **Secondary Text**: `text-gray-400` for lists and metadata
+- **Borders**: `border-dynamous-800/30` for subtle divisions
+- **Backgrounds**: `bg-dynamous-900/10` for highlighted sections
+
+#### Responsive Design
+- **Container**: `max-w-4xl mx-auto` for optimal reading width
+- **Padding**: `px-4 md:px-6` for mobile-first responsiveness
+- **Typography**: Responsive text sizes (`text-4xl md:text-5xl`)
+- **Buttons**: Stacked on mobile (`flex-col sm:flex-row`)
+
+#### Accessibility Features
+- **Semantic HTML**: Proper heading hierarchy (h1, h2)
+- **Color Contrast**: High contrast ratios maintained
+- **Focus States**: Interactive elements have hover states
+- **Link Identification**: Clear visual distinction for links
+
+This pattern should be applied to all future content pages to maintain design consistency and provide users with a familiar reading experience across the platform.
+
 ## Design Principles
 
 ### 1. Type Safety
@@ -144,6 +199,7 @@ npm run preview      # Preview production build
 ### Technical Features
 - **Responsive Navigation** - Mobile-friendly navigation patterns
 - **Interactive Components** - Engaging UI elements with animations
+- **Content Page Pattern** - Standardized design for legal/information pages
 - **SEO Optimization** - Proper meta tags and Open Graph support
 - **Performance Monitoring** - Built-in analytics and performance tracking
 
