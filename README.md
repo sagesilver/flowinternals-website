@@ -1,73 +1,160 @@
-# Welcome to your Lovable project
+# flowinternals Website
 
-## Project info
+A modern educational platform focused on AI-powered workflows, automation tools, and transformative business process optimization. Built with React, TypeScript, and cutting-edge web technologies.
 
-**URL**: https://lovable.dev/projects/cba9ebdf-1988-418d-b342-9a7232b7f95f
+## 🚀 Technology Stack
 
-## How can I edit this code?
+- **Framework**: React 18.3.1 with TypeScript
+- **Build Tool**: Vite 5.4.1 for fast development and optimized builds
+- **Styling**: Tailwind CSS with shadcn/ui components
+- **UI Components**: Radix UI primitives for accessibility
+- **Routing**: React Router DOM for client-side navigation
+- **State Management**: TanStack React Query for server state
+- **Forms**: React Hook Form with Zod validation
+- **Development**: ESLint, TypeScript ESLint, Hot Module Replacement
 
-There are several ways of editing your application.
+## 📋 Prerequisites
 
-**Use Lovable**
+- Node.js (version 16 or higher)
+- npm or yarn package manager
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/cba9ebdf-1988-418d-b342-9a7232b7f95f) and start prompting.
+## 🛠️ Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd skill-spark-academy-hub
+```
 
-**Use your preferred IDE**
+2. Install dependencies:
+```bash
+npm install
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🏃‍♂️ Development
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server with HMR
+- `npm run build` - Create production build
+- `npm run build:dev` - Create development mode build
+- `npm run lint` - Run ESLint checks
+- `npm run preview` - Preview production build locally
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🏗️ Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/          # Reusable React components
+│   ├── ui/             # shadcn/ui base components
+│   ├── CourseCard.tsx  # Course display component
+│   ├── FeatureCard.tsx # Feature highlight component
+│   └── Layout.tsx      # Main layout wrapper
+├── pages/              # Route-based page components
+│   ├── Index.tsx       # Homepage
+│   ├── Courses.tsx     # Course catalog
+│   └── Features.tsx    # Feature showcase
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+└── styles/             # Shared CSS files
+```
 
-This project is built with:
+## ✨ Key Features
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Educational Platform
+- **Course Catalog** - Comprehensive courses on AI workflows and automation
+- **n8n Workflow Training** - Specialized workflow automation courses
+- **GPT Bot Squad** - AI-powered automation solutions
+- **Rekon Analyst** - Business process analysis tools
 
-## How can I deploy this project?
+### Technical Features
+- **Responsive Design** - Mobile-first, cross-device compatibility
+- **Modern UI** - Clean, accessible interface with shadcn/ui
+- **Type Safety** - Full TypeScript implementation
+- **Performance Optimized** - Vite-powered build with code splitting
+- **SEO Ready** - Proper meta tags and Open Graph support
 
-Simply open [Lovable](https://lovable.dev/projects/cba9ebdf-1988-418d-b342-9a7232b7f95f) and click on Share -> Publish.
+## 🎨 Design System
 
-## Can I connect a custom domain to my Lovable project?
+The project uses a custom design system built on:
+- **Color Palette**: HSL-based emerald green theme (`dynamous-*` colors)
+- **Components**: shadcn/ui for consistent, accessible components
+- **Typography**: Tailwind CSS typography utilities
+- **Animations**: Custom CSS animations with Tailwind Animate
+- **Responsive Breakpoints**: Mobile-first approach
 
-Yes it is!
+## 📁 Pages & Routes
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- **Homepage** (`/`) - Platform overview and hero section
+- **Courses** (`/courses`) - Course catalog and offerings
+- **Features** (`/features`) - Platform capabilities showcase
+- **About** (`/about`) - Company information
+- **Pricing** (`/pricing`) - Subscription plans
+- **Blog** (`/blog`) - Educational content and updates
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🔧 Configuration
+
+### Build Configuration
+- **Vite Config**: Multi-page setup with optimized asset handling
+- **TypeScript**: Strict type checking with path aliases
+- **Tailwind**: Custom theme with component variants
+- **ESLint**: React and TypeScript-specific rules
+
+### Environment Setup
+The project uses standard environment variables and can be configured for different deployment targets.
+
+## 🚀 Deployment
+
+### Production Build
+```bash
+npm run build
+```
+
+The `dist/` directory contains the production-ready files for deployment.
+
+### Build Features
+- Automatic code splitting
+- Asset optimization
+- CSS minification
+- TypeScript compilation
+- Source map generation
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Development Guidelines
+- Follow TypeScript best practices
+- Use Tailwind CSS for styling
+- Ensure components are accessible
+- Write descriptive commit messages
+- Test across different devices
+
+## 📚 Architecture
+
+For detailed information about the project architecture, technology decisions, and design principles, see [architecture.md](./architecture.md).
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 📞 Contact
+
+For inquiries about the platform or technical questions:
+- Email: [support@flowinternals.com](mailto:support@flowinternals.com)
+- Website: [https://flowinternals.com](https://flowinternals.com)
+
+---
+
+*Built with ❤️ using modern web technologies for the next generation of workflow automation education.*
