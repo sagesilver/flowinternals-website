@@ -1,10 +1,10 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import CourseCard from "@/components/CourseCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import FeatureCard from "@/components/FeatureCard";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -16,25 +16,28 @@ const Index = () => {
             <img 
               src="/lovable-uploads/a4fc7853-2ebb-4b66-bb30-8a3a378f59d3.png" 
               alt="flowinternals logo" 
-              className="h-24 w-auto" /* Reduced from h-28 to h-24 (approximately 10% smaller) */
+              className="h-14 w-auto" 
             />
           </div>
           <nav className="hidden md:flex items-center gap-8"> {/* Increased gap from gap-6 to gap-8 */}
-            <a href="#" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
+            <Link to="/" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
               Home
-            </a>
-            <a href="#" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
+            </Link>
+            <Link to="/courses" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
               Courses
-            </a>
-            <a href="#" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
+            </Link>
+            <Link to="/products" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
+              Products
+            </Link>
+            <Link to="/features" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
               Features
-            </a>
-            <a href="#" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
+            </Link>
+            <a href="#testimonials" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
               Testimonials
             </a>
-            <a href="#" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
+            <Link to="/pricing" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
               Pricing
-            </a>
+            </Link>
           </nav>
           <div className="flex items-center gap-4">
             <Button variant="outline" className="hidden md:flex">
@@ -53,18 +56,22 @@ const Index = () => {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="animate-fade-in">
               <h1 className="mb-4">
-                <span className="gradient-text">Accelerate</span> Your Learning Journey
+                <span className="text-dynamous-400">Accelerate</span>{" "}
+                <span className="text-white">your AI-powered Workflow Journey</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-                Master in-demand skills with expert-led courses tailored for career advancement in technology and beyond.
+                Master transforming your business processes by learning and implementing AI-powered workflows
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="hero-button">
+                <Link to="/courses" className="hero-button">
                   Explore Courses
-                </Button>
-                <Button variant="outline" size="lg" className="h-12 border-dynamous-300 text-dynamous-700 hover:bg-dynamous-50">
-                  View Demo
-                </Button>
+                </Link>
+                <Link 
+                  to="/products"
+                  className="inline-flex h-12 items-center justify-center rounded-md border border-dynamous-300 bg-transparent px-6 text-lg font-medium text-dynamous-700 transition-colors hover:bg-dynamous-50"
+                >
+                  Explore Products
+                </Link>
               </div>
               <div className="mt-8 flex items-center text-muted-foreground">
                 <div className="flex -space-x-2">
@@ -108,18 +115,24 @@ const Index = () => {
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <CourseCard
-              title="Data Science Fundamentals"
-              description="Learn the core concepts of data science including statistics, Python, data visualization, and machine learning basics."
+              title="Introduction to n8n Workflow Basics"
+              description="A simple workflow demonstrating how to build a recruitment form that saves resumes to OneDrive and updates records in Microsoft Excel."
               image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               level="Beginner"
-              duration="8 weeks"
+              duration="2 hours"
+              isTutorial={true}
+              isFree={true}
             />
             <CourseCard
-              title="Full-Stack Web Development"
-              description="Master modern web development with JavaScript, React, Node.js, and MongoDB to build complete web applications."
-              image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              title="Software Engineering GPT Squad"
+              description="Assist your software delivery with AI-agent bots that never tire, sleep or eat!"
+              image="/media/BOT squad b.png"
               level="Intermediate"
-              duration="12 weeks"
+              duration="5-Agents"
+              isTutorial={false}
+              isFree={false}
+              isProduct={true}
+              isPaid={true}
             />
             <CourseCard
               title="AI & Machine Learning"
@@ -128,11 +141,22 @@ const Index = () => {
               level="Advanced"
               duration="10 weeks"
             />
+            <CourseCard
+              title="Meet Agent Rekon - Requirements Analyst"
+              description="Rekon is your helpful analyst who will help you manage your software requirements."
+              image="/media/rekon_analyst.png"
+              level="Advanced"
+              duration="Single Agent"
+              isTutorial={false}
+              isFree={false}
+              isProduct={true}
+              isPaid={true}
+            />
           </div>
           <div className="mt-12 text-center">
-            <Button className="bg-dynamous-600 hover:bg-dynamous-700 shadow-lg shadow-dynamous-600/20">
+            <Link to="/courses" className="hero-button">
               View All Courses
-            </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -290,10 +314,10 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-background/80">
+      <section id="testimonials" className="py-20 bg-background/80">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center text-center mb-12">
-            <h2 className="gradient-text mb-4">Student Success Stories</h2>
+            <h2 className="gradient-text mb-4">Success Stories</h2>
             <p className="text-xl text-muted-foreground max-w-3xl">
               Hear from our graduates who have transformed their careers through our courses.
             </p>
@@ -313,6 +337,21 @@ const Index = () => {
               quote="The AI course was exactly what I needed to upskill in my current role. The hands-on projects and personalized feedback from instructors made all the difference."
               author="Priya Sharma"
               role="ML Engineer at InnovateTech"
+            />
+            <TestimonialCard
+              quote="flowinternals' workflow automation tools transformed our HR processes. We reduced onboarding time by 70% and eliminated manual data entry. The ROI was immediate and substantial."
+              author="David Rodriguez"
+              role="Head of HR Operations, GlobalTech Solutions"
+            />
+            <TestimonialCard
+              quote="As a small business owner, the n8n workflow templates from flowinternals were a game-changer. I automated my entire customer support pipeline in just two days. Incredible value for money!"
+              author="Lisa Chen"
+              role="Founder, Digital First Marketing"
+            />
+            <TestimonialCard
+              quote="The custom workflow solutions helped us seamlessly integrate our legacy systems with modern tools. What used to take weeks now happens in minutes. flowinternals has revolutionized our operations."
+              author="James Mitchell"
+              role="CTO, Enterprise Solutions Inc."
             />
           </div>
         </div>
@@ -460,19 +499,19 @@ const Index = () => {
               <h4 className="text-white text-sm font-semibold mb-4">COMPANY</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="hover:text-white">About Us</a>
+                  <Link to="/about-us" className="hover:text-white">About Us</Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">Careers</a>
+                  <Link to="/careers" className="hover:text-white">Careers</Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">Partners</a>
+                  <Link to="/partners" className="hover:text-white">Partners</Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">Blog</a>
+                  <Link to="/blog" className="hover:text-white">Blog</Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">Press</a>
+                  <Link to="/press" className="hover:text-white">Press</Link>
                 </li>
               </ul>
             </div>
@@ -480,23 +519,17 @@ const Index = () => {
               <h4 className="text-white text-sm font-semibold mb-4">LEGAL</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="hover:text-white">Terms of Service</a>
+                  <Link to="/terms" className="hover:text-white">Terms of Service</Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">Privacy Policy</a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">Cookie Policy</a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">Accessibility</a>
+                  <Link to="/privacy" className="hover:text-white">Privacy Policy</Link>
                 </li>
               </ul>
             </div>
           </div>
           <div className="border-t border-dynamous-900/30 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center">
             <p className="text-sm opacity-70">
-              © 2025 flowinternals Academy. All rights reserved.
+              © 2025 flowinternals. All rights reserved.
             </p>
             <div className="mt-4 sm:mt-0">
               <select className="bg-dynamous-900/50 text-gray-300 rounded px-3 py-1 text-sm border border-dynamous-800/30 focus:outline-none focus:ring-1 focus:ring-dynamous-500">

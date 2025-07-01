@@ -19,4 +19,15 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  publicDir: "public",
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        'n8n-workflow-basics': path.resolve(__dirname, 'public/n8n-workflow-basics.html')
+      }
+    }
+  }
 }));

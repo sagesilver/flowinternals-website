@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n8n Workflow Training Template</title>
+    <style>
+        :root {
+            --primary: #10B981;
+            --primary-dark: #059669;
+            --primary-light: #34D399;
+            --bg-dark: #111827;
+            --bg-light: #1F2937;
+            --text-primary: #F9FAFB;
+            --text-secondary: #D1D5DB;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #020917;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000000;
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 87px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Header */
+        .header {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-dark) 100%);
+        }
+
+        .header h1 {
+            color: var(--primary);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section h2 {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .section-content {
+            background-color: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-list {
+            list-style: none;
+        }
+
+        .step-list li {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .step-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .code-block {
+            background-color: var(--bg-dark);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--bg-light);
+        }
+
+        .meta-item {
+            flex: 1;
+        }
+
+        .meta-item h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--bg-light);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .download-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            font-weight: bold;
+            transition: var(--transition);
+        }
+
+        .download-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .header {
+                padding: 6rem 0 3rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .meta-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        .tools-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* approximately 5mm */
+            margin: 2rem 0;
+            background-color: var(--bg-dark);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .tool-logo {
+            height: 60px;
+            width: 60px;
+            object-fit: contain;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .tool-logo:hover {
+            transform: translateY(-2px);
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav-container">
+            <img src="FINAL-flowinternals-black.jpg" alt="Flow Internals" class="logo">
+            <div class="nav-links">
+                <a href="#usecase" class="nav-link">Use Case</a>
+                <a href="#prerequisites" class="nav-link">Prerequisites</a>
+                <a href="#instructions" class="nav-link">Instructions</a>
+                <a href="#tips" class="nav-link">Tips</a>
+                <a href="#variations" class="nav-link">Variations</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>Submit Job Application</h1>
+            <p>A simple workflow demonstrating how to build a recruitment form that saves resumes to OneDrive and updates records in Microsoft Excel</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="usecase" class="section">
+            <div class="container">
+                <h2>Use Case Summary</h2>
+                <div class="section-content">
+                    <p>This very simple workflow shows how to build a simple submit form for a recruitment user to add the name, resume and job role a candidate has applied for - which is subsequently saved to Onedrive and a record updated in Microsoft Excel.</p>
+                    <p style="margin-top: 1rem;">Whilst not really practical in a real-world scenario, this simple flow uncovered some great lessons for me in implementing Microsoft nodes and was my first flow using n8n Forms.</p>
+                    
+                    <div style="text-align: center; margin: 2rem 0;">
+                        <img src="submit job application workflow.png" alt="Submit Job Application Workflow Diagram" style="max-width: 70%; height: auto; border-radius: 12px; box-shadow: 0 0 20px rgba(16, 185, 129, 0.2); border: 2px solid var(--primary); padding: 1rem; background: rgba(0, 0, 0, 0.2);">
+                    </div>
+
+                    <div class="meta-info">
+                        <div class="meta-item">
+                            <h4>Expected Outcome</h4>
+                            <p>In this mini-course, you will:</p>
+                            <ul class="step-list" style="margin-top: 0.5rem;">
+                                <li>Learn the basics about the n8n EDITOR and CANVAS</li>
+                                <li>Learn the basics about NODES - what they are and some different types of nodes</li>
+                                <li>Learn how to add a FORM TRIGGER NODE with simple data entry fields</li>
+                                <li>Understand how one node can pass data of various data types to another node</li>
+                                <li>Learn the basics of PARAMETERISATION - passing variable data between nodes</li>
+                                <li>Learn how to setup CREDENTIALS for external applications</li>
+                                <li>Learn how to test and debug your workflow</li>
+                            </ul>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Estimated Build Time</h4>
+                            <p>Novice: 1/2 hour to 1 hour including carefully checking your work, file and record saves. Don't be stressed if it takes you much longer as there are a lot of important concepts to grasp and learn in these initial simple workflows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="section">
+            <div class="container">
+                <h2>Tools Used</h2>
+                <div class="section-content">
+                    <div class="tools-grid">
+                        <img src="n8n-logo.png" alt="n8n" class="tool-logo">
+                        <img src="onedrive-logo.png" alt="Microsoft OneDrive" class="tool-logo">
+                        <img src="excel-logo.png" alt="Microsoft Excel" class="tool-logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="prerequisites" class="section">
+            <div class="container">
+                <h2>Prerequisites</h2>
+                <div class="section-content">
+                    <ul class="step-list">
+                        <li>Must have Microsoft OneDrive and MS-Excel accessible (I used Microsoft Office 365 for this)</li>
+                        <li>Must have n8n Community Edition installed and setup on your local machine. This workflow was built in v1.88.0</li>
+                        <li>Note you could probably use Cloud edition however the setup and instructions for writing to your personal/company Onedrive and a local Excel file may be different</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="instructions" class="section">
+            <div class="container">
+                <h2>Step-by-Step Instructions</h2>
+                <div class="section-content">
+                    <h3>Trigger Setup</h3>
+                    <ul class="step-list">
+                        <li>On canvas, TAB key to open the nodes panel -> Add another trigger -> On forms submission</li>
+                        <li>Staying in TEST mode, Form Title = Submit Application, Form Description = optional (appears on the form so you can add instructions if you like)</li>
+                        <li>Add the following form elements (fields):
+                            <ul style="margin: 0.5rem 0 0.5rem 1.5rem;">
+                                <li>Field Name: Name, Type=Text, Placeholder blank), check Required on</li>
+                                <li>Field Name: Email, Type=Email, Placeholder blank), check Required on</li>
+                                <li>Field Mobile Number: Name, Type=Text, Placeholder blank), check Required on</li>
+                                <li>Field Name: ResumeUpload, Type=File, Multiple files OFF, check Required on</li>
+                                <li>Field Name: Job Role Name, Type=Text, Placeholder blank), check Required on</li>
+                            </ul>
+                        </li>
+                        <li>Respond When -> Form is Submitted</li>
+                        <li>I also turned OFF the n8n Attribution but this is optional</li>
+                    </ul>
+
+                    <h3>Node Configuration</h3>
+                    <ul class="step-list">
+                        <li><strong>1. Trigger Node</strong><br>
+                            This node serves as a form trigger, initiating the workflow when a new application form is submitted. It is configured to listen for form submissions and triggers the workflow upon receiving new application data. The settings include specifying the form to monitor and any authentication required to access the form service. In the workflow, this node acts as the starting point, processing the submitted application data and passing it on to subsequent nodes for further processing.</li>
+                        
+                        <li><strong>2. Save to Onedrive Node</strong><br>
+                            This node is responsible for saving the submitted resume to OneDrive as part of the job application process. It interacts with the Microsoft OneDrive API using the provided authentication credentials. The settings include the folder path where the resume should be saved and the name of the file. Once the resume is saved, the node outputs the file metadata, which can be used by subsequent nodes in the workflow.</li>
+                        
+                        <li><strong>3. Get OneDrive URL Node</strong><br>
+                            This node performs an HTTP request to retrieve the URL of a file from OneDrive. It interacts with the OneDrive API using the provided authentication credentials and takes input parameters such as the file ID or name. In the workflow, it is used to fetch the URL of a specific file from OneDrive, which is then used as input for subsequent nodes.</li>
+                        
+                        <li><strong>4. Save Application Record to Excel Node</strong><br>
+                            This node saves the submitted job application data to an Excel file. It interacts with the Microsoft Excel service to create or update the specified Excel file. The settings may include authentication details, file path, and data mapping configurations. In the workflow, it receives the job application data, processes it, and then saves it to the Excel file. The output is the updated Excel file, which can be used by subsequent nodes for further processing or storage.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="test-scenario" class="section">
+            <div class="container">
+                <h2>Test Scenario</h2>
+                <div class="section-content">
+                    <p>Watch video</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips" class="section">
+            <div class="container">
+                <h2>Configuration Tips</h2>
+                <div class="section-content">
+                    <h3>Common Errors & Fixes</h3>
+                    <ul class="step-list">
+                        <li>Make sure your mapping of parameters between the OneDrive and Save to Excel are correctly mapped</li>
+                        <li>When testing - if you have 2 monitors - have n8n on one monitor and OneDrive and Excel in split-screen mode on the second. That way you can see the file and record saves in real time</li>
+                        <li>If you make changes to your workflow, make sure to SAVE your work before attempting the next test/run. There is no auto-save in n8n yet</li>
+                    </ul>
+
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--bg-dark);">
+                        <p><strong>OneDrive Tip:</strong> In the Onedrive node, I wrote the file to the Onedrive root directory (Parent ID = root). However if you want to write to another folder - you need to find that folders id (it won't work if you just put in the folder name or path). To find that id - open the folder in Onedrive online view and grab it from the URL. If you can't identify it - give the whole URL to ChatGPT/Claude and ask it to extract it for you. Then put that into the Parent ID field). Note that it can take some time for the file to appear due to sync speed. Note that if you change to a folder you will also need to change the next node (Get OneDrive File URL) to also retrieve from that folder.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="variations" class="section">
+            <div class="container">
+                <h2>Suggested Variations</h2>
+                <div class="section-content">
+                    <ul class="step-list">
+                        <li>Remove the Get URL node and map directly between OneDrive and Save to Excel</li>
+                        <li>Replace the n8n form with an external one created by yourself with Claude or another tool like Lovable or Cursor. Or hook an external form service like https://tally.so/</li>
+                        <li>Replace the Microsoft apps with the equivalent from the Google ecosystem (Google Drive and Google Sheets)</li>
+                        <li>Replace Excel/Sheets with a database back-end like Airtable or Supabase</li>
+                    </ul>
+
+                    <div class="meta-info">
+                        <div class="meta-item">
+                            <h4>Version</h4>
+                            <p>1.88.0</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Last Updated</h4>
+                            <p>March 15, 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Download the complete resources for this workflow from the link below</p>
+            <a href="download file.zip" class="download-button">
+                FREE DOWNLOAD
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for section animations
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html> 
