@@ -33,7 +33,7 @@ The flowinternals website is a modern React-based educational platform focused o
 ## Project Structure
 
 ```
-skill-spark-academy-hub/
+flowinternals-website/
 ├── public/                     # Static assets
 │   ├── media/                 # Images and graphics
 │   │   └── *.html                 # Additional HTML pages
@@ -82,16 +82,15 @@ skill-spark-academy-hub/
 ## Content Page Design Pattern
 
 ### Legal & Information Pages
-A standardized design pattern has been established for content-heavy pages (Privacy Policy, Terms of Service, About Us, etc.) that ensures consistency and readability while maintaining the site's design principles.
+A standardized design pattern has been established for content-heavy pages (Privacy Policy, Terms and Conditions, About Us, etc.) that ensures consistency and readability while maintaining the site's design principles.
 
 #### Layout Structure
 ```typescript
-// Standard content page structure
+// Standard content page structure using Header component
 <div className="min-h-screen bg-background">
-  {/* Navigation spacer */}
-  <div className="h-24"></div>
+  <Header />
   
-  {/* Header Section */}
+  {/* Page Header Section */}
   <section className="bg-gradient-to-br from-dynamous-900/20 via-background to-dynamous-950/30 py-16 border-b border-dynamous-900/30">
     {/* Page title and description */}
   </section>
@@ -103,13 +102,36 @@ A standardized design pattern has been established for content-heavy pages (Priv
 </div>
 ```
 
+#### Header Component
+A reusable `Header` component (`@/components/Header`) provides consistent navigation across all pages:
+- **Sticky Navigation**: Fixed header with backdrop blur and dark background
+- **Logo**: Clickable logo that links to homepage with hover effects
+- **Navigation Menu**: Responsive navigation with desktop/mobile considerations
+- **Action Buttons**: Sign In and Get Started buttons with consistent styling
+- **Brand Colors**: Uses `dynamous-*` color palette for hover states
+
+#### Template Integration
+All pages should import and use the Header component:
+```typescript
+import Header from "@/components/Header";
+
+const PageComponent = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      {/* Page content */}
+    </div>
+  );
+};
+```
+
 #### Design Elements
 - **Header**: Gradient background with page title and description
 - **Content Sections**: Left border accent (`border-l-4 border-dynamous-600`)
 - **Typography**: Hierarchical headings with `text-dynamous-400` for section titles
 - **Spacing**: Consistent `space-y-12` between sections, `space-y-4` within sections
 - **Lists**: Styled with `list-disc list-inside` and consistent indentation
-- **Contact Info**: Highlighted contact details in bordered containers
+- **Contact Info**: Highlighted contact details in bordered containers (Email: flowinternals@gmail.com)
 - **CTAs**: Bottom call-to-action section with gradient background
 
 #### Color Palette for Content Pages
@@ -133,6 +155,50 @@ A standardized design pattern has been established for content-heavy pages (Priv
 - **Link Identification**: Clear visual distinction for links
 
 This pattern should be applied to all future content pages to maintain design consistency and provide users with a familiar reading experience across the platform.
+
+#### Date Formatting Standards
+All dates displayed on the website follow Australian formatting conventions:
+- **Primary Format**: DD/MM/YYYY (e.g., "01/07/2025")
+- **With Day Names**: "Monday, 01/07/2025"
+- **Short Format**: "1 Jul 2025"
+
+**Utility Functions** (`@/lib/utils`):
+```typescript
+import { formatDateAU, formatDateAUWithDay, formatDateAUShort } from "@/lib/utils";
+
+// Standard Australian format (DD/MM/YYYY)
+formatDateAU() // "01/07/2025"
+formatDateAU(new Date('2025-01-15')) // "15/01/2025"
+
+// With day name
+formatDateAUWithDay() // "Monday, 01/07/2025"
+
+// Short format
+formatDateAUShort() // "1 Jul 2025"
+```
+
+**Usage in Components**:
+```typescript
+<span>Last updated: {formatDateAU()}</span>
+<span>Published: {formatDateAUWithDay(article.publishDate)}</span>
+<span>Due: {formatDateAUShort(task.dueDate)}</span>
+```
+
+All date displays must use these utility functions to ensure consistent Australian formatting across the platform.
+
+#### Implemented Content Pages
+The following pages have been created using the standardized content page pattern:
+
+- **Privacy Policy** (`/privacy`) - Complete privacy policy with 9 sections covering data collection, usage, and protection
+- **Terms and Conditions** (`/terms`) - Comprehensive terms covering website usage, intellectual property, liability, and Australian legal compliance
+
+Both pages feature:
+- Identical styling and layout structure
+- Header component integration with navigation
+- Australian date formatting
+- Contact information with flowinternals@gmail.com
+- Responsive design and consistent typography
+- Call-to-action sections for user engagement
 
 ## Design Principles
 

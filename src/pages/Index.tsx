@@ -3,52 +3,14 @@ import { Button } from "@/components/ui/button";
 import CourseCard from "@/components/CourseCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import FeatureCard from "@/components/FeatureCard";
+import Header from "@/components/Header";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      {/* Header */}
-      <header className="border-b border-dynamous-900/30 sticky top-0 z-10 bg-black backdrop-blur-sm">
-        <div className="container flex h-20 items-center justify-between"> {/* Increased height from h-16 to h-20 */}
-          <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/a4fc7853-2ebb-4b66-bb30-8a3a378f59d3.png" 
-              alt="flowinternals logo" 
-              className="h-14 w-auto" 
-            />
-          </div>
-          <nav className="hidden md:flex items-center gap-8"> {/* Increased gap from gap-6 to gap-8 */}
-            <Link to="/" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
-              Home
-            </Link>
-            <Link to="/courses" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
-              Courses
-            </Link>
-            <Link to="/products" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
-              Products
-            </Link>
-            <Link to="/features" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
-              Features
-            </Link>
-            <a href="#testimonials" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
-              Testimonials
-            </a>
-            <Link to="/pricing" className="text-sm font-medium hover:text-dynamous-400 transition-colors">
-              Pricing
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <Button variant="outline" className="hidden md:flex">
-              Sign In
-            </Button>
-            <Button className="bg-dynamous-600 hover:bg-dynamous-700 shadow-lg shadow-dynamous-600/20">
-              Get Started
-            </Button>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="bg-hero-pattern py-20 md:py-32">
@@ -519,7 +481,7 @@ const Index = () => {
               <h4 className="text-white text-sm font-semibold mb-4">LEGAL</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link to="/terms" className="hover:text-white">Terms of Service</Link>
+                  <Link to="/terms" className="hover:text-white">Terms and Conditions</Link>
                 </li>
                 <li>
                   <Link to="/privacy" className="hover:text-white">Privacy Policy</Link>

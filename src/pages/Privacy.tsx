@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Header from "@/components/Header";
+import { formatDateAU } from "@/lib/utils";
 
 const Privacy = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation spacer */}
-      <div className="h-24"></div>
+      <Header />
       
       {/* Header Section */}
       <section className="bg-gradient-to-br from-dynamous-900/20 via-background to-dynamous-950/30 py-16 border-b border-dynamous-900/30">
@@ -18,7 +19,7 @@ const Privacy = () => {
               Your privacy is important to us. This policy outlines how we collect, use, and protect your personal information.
             </p>
             <div className="mt-8 text-sm text-gray-400">
-              <span>Last updated: {new Date().toLocaleDateString()}</span>
+              <span>Last updated: {formatDateAU()}</span>
             </div>
           </div>
         </div>
@@ -159,7 +160,7 @@ const Privacy = () => {
                   </p>
                   <div className="bg-dynamous-900/20 p-4 rounded-lg border border-dynamous-800/30 mt-4">
                     <p className="text-dynamous-400 font-semibold">flowinternals</p>
-                    <p className="text-gray-400">Email: <a href="mailto:support@flowinternals.com" className="text-dynamous-400 hover:text-dynamous-300 transition-colors">support@flowinternals.com</a></p>
+                    <p className="text-gray-400">Email: <a href="mailto:flowinternals@gmail.com" className="text-dynamous-400 hover:text-dynamous-300 transition-colors">flowinternals@gmail.com</a></p>
                     <p className="text-gray-400">Website: <a href="https://flowinternals.com" className="text-dynamous-400 hover:text-dynamous-300 transition-colors">https://flowinternals.com</a></p>
                   </div>
                 </div>
@@ -176,7 +177,7 @@ const Privacy = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="mailto:support@flowinternals.com"
+                  href="mailto:flowinternals@gmail.com"
                   className="inline-flex items-center justify-center px-6 py-3 bg-dynamous-600 hover:bg-dynamous-700 text-white font-semibold rounded-lg transition-all duration-200 hover:scale-105"
                 >
                   Contact Support

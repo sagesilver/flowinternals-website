@@ -23,7 +23,7 @@ A modern educational platform focused on AI-powered workflows, automation tools,
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd skill-spark-academy-hub
+cd flowinternals-website
 ```
 
 2. Install dependencies:
@@ -152,7 +152,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 📞 Contact
 
 For inquiries about the platform or technical questions:
-- Email: [support@flowinternals.com](mailto:support@flowinternals.com)
+- Email: [flowinternals@gmail.com](mailto:flowinternals@gmail.com)
 - Website: [https://flowinternals.com](https://flowinternals.com)
 
 ---
