@@ -1,7 +1,9 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import { useScrollToTop } from '../hooks/useScrollToTop';
 
 const N8nWorkflowBasics: React.FC = () => {
+  useScrollToTop();
   return (
     <Layout
       title="Introduction to n8n Workflow Basics"

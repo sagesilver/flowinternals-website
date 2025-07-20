@@ -1,7 +1,9 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import { useScrollToTop } from '../hooks/useScrollToTop';
 
 const GptBotSquad: React.FC = () => {
+  useScrollToTop();
   return (
     <Layout
       title="Software Engineering GPT Squad"
