@@ -235,32 +235,18 @@ const N8nWorkflowBasics: React.FC = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                gap: '20px',
                 margin: '2rem 0',
                 backgroundColor: '#111827',
                 padding: '2rem',
                 borderRadius: '8px'
               }}>
-                <img src="/n8n-logo.png" alt="n8n" className="tool-logo" style={{
-                  height: '40px',
-                  width: '40px',
+                <img src="/media/n8n_tutorial_apps.png" alt="n8n Tutorial Apps" className="tool-logo" style={{
+                  maxHeight: '200px',
+                  width: 'auto',
                   objectFit: 'contain',
                   transition: 'all 0.3s ease',
-                  background: 'transparent'
-                }} />
-                <img src="/onedrive-logo.png" alt="Microsoft OneDrive" className="tool-logo" style={{
-                  height: '40px',
-                  width: '40px',
-                  objectFit: 'contain',
-                  transition: 'all 0.3s ease',
-                  background: 'transparent'
-                }} />
-                <img src="/excel-logo.png" alt="Microsoft Excel" className="tool-logo" style={{
-                  height: '40px',
-                  width: '40px',
-                  objectFit: 'contain',
-                  transition: 'all 0.3s ease',
-                  background: 'transparent'
+                  background: 'transparent',
+                  boxShadow: '0 0 20px rgba(34, 197, 94, 0.3), 0 0 40px rgba(34, 197, 94, 0.15)'
                 }} />
               </div>
             </div>

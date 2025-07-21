@@ -75,9 +75,9 @@ const Index = () => {
       <section className="py-20 bg-background/80">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center text-center mb-12">
-            <h2 className="gradient-text mb-4">Featured Courses</h2>
+            <h2 className="gradient-text mb-4">Featured Products and Courses</h2>
             <p className="text-xl text-muted-foreground max-w-3xl">
-              Discover our most popular courses designed to help you master new skills and advance your career.
+              Discover our most popular products and courses designed to help you master new skills and advance your career.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -112,6 +112,27 @@ const Index = () => {
               title="Meet Agent Rekon - Requirements Analyst"
               description="Rekon is your helpful analyst who will help you manage your software requirements."
               image="/media/rekon_analyst.png"
+              level="Advanced"
+              duration="Single Agent"
+              isTutorial={false}
+              isFree={false}
+              isProduct={true}
+              isPaid={true}
+            />
+            <CourseCard
+              title="AI Roadmap Tutorial"
+              description="A walkthrough of key topics that will help you better understand your own journey through the AI landscape."
+              image="/media/ai_roadmap.png"
+              level="Intermediate"
+              duration="2 weeks"
+              isTutorial={true}
+              isFree={false}
+              isPaid={true}
+            />
+            <CourseCard
+              title="Meet Agent Cheka - Test Analyst"
+              description="Cheka is an expert in testing and will help you compile tests for your project."
+              image="/media/cheka_tests.png"
               level="Advanced"
               duration="Single Agent"
               isTutorial={false}
