@@ -55,12 +55,17 @@ const Index = () => {
               </div>
             </div>
             <div className="lg:h-[540px] relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-dynamous-600/10 to-dynamous-500/10 rounded-lg" />
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Students collaborating"
-                className="w-full h-full rounded-lg object-cover shadow-xl"
-              />
+              <div className="absolute inset-0 bg-gradient-to-r from-dynamous-600/10 to-dynamous-500/10 rounded-2xl" />
+              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl" style={{
+                boxShadow: '0 0 30px rgba(34, 197, 94, 0.4), 0 0 60px rgba(34, 197, 94, 0.2)'
+              }}>
+                <div className="absolute inset-0 bg-gradient-to-r from-dynamous-400/20 to-dynamous-500/20 rounded-2xl" />
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Students collaborating"
+                  className="w-full h-full rounded-2xl object-cover relative z-10"
+                />
+              </div>
             </div>
           </div>
         </div>
