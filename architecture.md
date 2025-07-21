@@ -254,24 +254,6 @@ npm run preview      # Preview production build
 - **Path Resolution** - `@/` alias for clean imports
 - **Environment Modes** - Separate development and production configurations
 
-### SPA Routing Configuration
-The application uses React Router for client-side routing, which requires special configuration in production environments:
-
-#### Required Configuration Files
-- **Netlify**: `public/_redirects` with `/* /index.html 200`
-- **Vercel**: `vercel.json` with rewrite rules to `/index.html`
-- **Other servers**: Configure to serve `index.html` for all non-static routes
-
-#### Why This Is Needed
-- **Development**: Vite dev server automatically handles SPA routing
-- **Production**: Servers need explicit configuration to serve `index.html` for routes like `/gpt-bot-squad`, `/rekon-analyst`
-- **Without config**: Results in 404 errors when users navigate directly to routes or refresh pages
-
-#### Navigation Components
-- Use React Router's `<Link>` component instead of `<a href>` for internal navigation
-- Ensures proper client-side routing without full page reloads
-- Maintains application state during navigation
-
 ## Key Features
 
 ### Educational Platform

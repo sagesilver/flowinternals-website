@@ -6,7 +6,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import N8nWorkflowBasics from "./pages/N8nWorkflowBasics";
 import AboutUs from "./pages/AboutUs";
 import Careers from "./pages/Careers";
 import Partners from "./pages/Partners";
@@ -34,7 +33,6 @@ const App: React.FC = () => {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/n8n-workflow-basics" element={<N8nWorkflowBasics />} />
               <Route path="/gpt-bot-squad" element={<GptBotSquad />} />
               <Route path="/rekon-analyst" element={<Rekon_Analyst />} />
               <Route path="/about-us" element={<AboutUs />} />

@@ -2,7 +2,6 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
 
 interface CourseCardProps {
   title: string;
@@ -31,7 +30,7 @@ const CourseCard = ({
 }: CourseCardProps) => {
   const getLink = () => {
     if (title === "Introduction to n8n Workflow Basics") {
-      return "/n8n-workflow-basics";
+      return "/n8n-workflow-basics.html";
     } else if (title === "Software Engineering GPT Squad") {
       return "/gpt-bot-squad";
     } else if (title === "Meet Agent Rekon - Requirements Analyst") {
@@ -41,7 +40,7 @@ const CourseCard = ({
   };
 
   return (
-    <Link to={getLink()} className="block">
+    <a href={getLink()} className="block">
       <Card className={cn("overflow-hidden h-full bg-card/40 backdrop-blur-sm border-dynamous-900/30", className)}>
         <div className="aspect-video overflow-hidden">
           <img
@@ -125,7 +124,7 @@ const CourseCard = ({
           </div>
         </CardFooter>
       </Card>
-    </Link>
+    </a>
   );
 };
 

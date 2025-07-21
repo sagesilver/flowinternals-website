@@ -1,11 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/shared.css";
-import { useScrollToTop } from "../hooks/useScrollToTop";
 
 const Rekon_Analyst = () => {
-  useScrollToTop();
-  
   // Add effect to make sections visible on load and scroll
   useEffect(() => {
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
