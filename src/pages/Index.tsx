@@ -516,9 +516,10 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-dynamous-900/30 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center">
-            <p className="text-sm opacity-70">
-              © 2025 flowinternals. All rights reserved.
-            </p>
+            <div className="text-sm opacity-70">
+              <p>© 2025 flowinternals. All rights reserved.</p>
+              <p className="mt-1">flowinternals ™ is a wholly owned product of Sagesilver Pty Ltd (ABN: 50096086821)</p>
+            </div>
             <div className="mt-4 sm:mt-0">
               <select className="bg-dynamous-900/50 text-gray-300 rounded px-3 py-1 text-sm border border-dynamous-800/30 focus:outline-none focus:ring-1 focus:ring-dynamous-500">
                 <option>English (US)</option>
