@@ -19,6 +19,7 @@ import Features from "./pages/Features";
 import Pricing from "./pages/Pricing";
 import GptBotSquad from "./pages/GptBotSquad";
 import Rekon_Analyst from "./pages/Rekon_Analyst";
+import Cheka_Test_Analyst from "./pages/Cheka_Test_Analyst";
 
 // Create a new QueryClient instance
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App: React.FC = () => {
               <Route path="/" element={<Index />} />
               <Route path="/gpt-bot-squad" element={<GptBotSquad />} />
               <Route path="/rekon-analyst" element={<Rekon_Analyst />} />
+              <Route path="/cheka-test-analyst" element={<Cheka_Test_Analyst />} />
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/careers" element={<Careers />} />
               <Route path="/partners" element={<Partners />} />

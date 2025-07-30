@@ -95,14 +95,17 @@ const Rekon_Analyst = () => {
                 </a>
               </div>
             </div>
-            <div className="lg:h-[540px] relative rounded-lg overflow-hidden shadow-2xl border border-dynamous-400/20">
-              <img
-                src="/media/Rekon_Laptop_Table_2.png"
-                alt="Rekon Requirements Analyst"
-                className="w-full h-full object-cover"
-                style={{ objectFit: "contain" }}
-              />
-            </div>
+            <img
+              src="/media/Rekon_Laptop_Table_2.png"
+              alt="Rekon Requirements Analyst"
+              className="rounded-2xl"
+              style={{ 
+                height: "540px",
+                width: "auto",
+                objectFit: "contain",
+                boxShadow: '0 0 40px rgba(34, 197, 94, 0.6), 0 0 80px rgba(34, 197, 94, 0.3)'
+              }}
+            />
           </div>
         </div>
       </section>
@@ -357,7 +360,10 @@ const Rekon_Analyst = () => {
               <img
                 src="/media/Rekon_oil.png"
                 alt="Rekon oil"
-                className="w-full h-auto max-w-4xl"
+                className="w-full h-auto max-w-4xl rounded-2xl"
+                style={{ 
+                  boxShadow: '0 0 30px rgba(34, 197, 94, 0.4), 0 0 60px rgba(34, 197, 94, 0.2)'
+                }}
               />
             </div>
           </div>
@@ -424,8 +430,8 @@ const Rekon_Analyst = () => {
                   <img
                     src="/media/Rekon_teach.png"
                     alt="Rekon process"
-                    className="rounded-lg shadow-xl relative z-10"
-                    style={{ objectFit: "contain", height: "540px" }}
+                    className="rounded-2xl shadow-xl relative z-10"
+                    style={{ objectFit: "contain", height: "540px", boxShadow: '0 0 30px rgba(34, 197, 94, 0.4), 0 0 60px rgba(34, 197, 94, 0.2)' }}
                   />
                 </div>
               </div>
@@ -448,7 +454,10 @@ const Rekon_Analyst = () => {
                 <img
                   src="/media/Rekon_Epics_Board.png"
                   alt="Example EPICs and User Stories"
-                  className="rounded-lg shadow-xl w-full max-w-4xl"
+                  className="rounded-2xl shadow-xl w-full max-w-xl"
+                  style={{ 
+                    boxShadow: '0 0 30px rgba(34, 197, 94, 0.4), 0 0 60px rgba(34, 197, 94, 0.2)'
+                  }}
                 />
               </div>
               <p className="text-center text-muted-foreground text-lg">Sample EPICs and User Story Flow</p>
@@ -645,7 +654,10 @@ const Rekon_Analyst = () => {
                   <img
                     src="/media/rekon_Keycard.png"
                     alt="Rekon Keycard"
-                    className="relative z-10 max-w-xs rounded-md shadow-2xl border border-dynamous-400/20"
+                    className="relative z-10 max-w-xs rounded-2xl shadow-2xl border border-dynamous-400/20"
+                    style={{ 
+                      boxShadow: '0 0 30px rgba(34, 197, 94, 0.4), 0 0 60px rgba(34, 197, 94, 0.2)'
+                    }}
                   />
                 </div>
               </div>

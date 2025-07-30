@@ -36,6 +36,8 @@ const CourseCard = ({
       return "/gpt-bot-squad";
     } else if (title === "Meet Agent Rekon - Requirements Analyst") {
       return "/rekon-analyst";
+    } else if (title === "Meet Agent Cheka - Test Analyst") {
+      return "/cheka-test-analyst";
     }
     return "#";
   };
