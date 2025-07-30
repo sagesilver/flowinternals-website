@@ -2,6 +2,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 interface CourseCardProps {
   title: string;
@@ -40,7 +41,7 @@ const CourseCard = ({
   };
 
   return (
-    <a href={getLink()} className="block">
+    <Link to={getLink()} className="block">
       <Card className={cn("overflow-hidden h-full bg-card/40 backdrop-blur-sm border-dynamous-900/30", className)}>
         <div className="aspect-video overflow-hidden transition-all duration-300 hover:border-2 hover:border-green-500" style={{
           boxShadow: '0 0 20px rgba(34, 197, 94, 0.3), 0 0 40px rgba(34, 197, 94, 0.15)'
@@ -126,7 +127,7 @@ const CourseCard = ({
           </div>
         </CardFooter>
       </Card>
-    </a>
+    </Link>
   );
 };
 

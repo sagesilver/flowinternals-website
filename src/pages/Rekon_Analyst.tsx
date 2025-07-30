@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import "../styles/shared.css";
 
 const Rekon_Analyst = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Add effect to make sections visible on load and scroll
   useEffect(() => {
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
