@@ -6,7 +6,7 @@ const ChekaConfig: AgentPageConfig = {
   agentTitle: "Your Professional Test Analyst — Always Ready, Always Precise.",
   agentDescription: "Cheka transforms testing requirements into comprehensive test plans, accelerating delivery and reducing project risk.",
   agentSubtitle: "Test Analyst",
-  heroImage: "/media/cheka 1.png", // Updated hero image
+  heroImage: "/media/Cheka 1.png", // Updated hero image
   logoImage: "/lovable-uploads/a4fc7853-2ebb-4b66-bb30-8a3a378f59d3.png", // Using existing logo
   
   capabilities: [
