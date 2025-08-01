@@ -1,13 +1,108 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import CourseCard from "@/components/CourseCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import FeatureCard from "@/components/FeatureCard";
 import Header from "@/components/Header";
 import { cn } from "@/lib/utils";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Index = () => {
+  const [activeFilter, setActiveFilter] = useState<'all' | 'tutorial' | 'product'>('all');
+  const featuredSectionRef = useRef<HTMLElement>(null);
+  const location = useLocation();
+
+  // Reset filter when navigating to home
+  useEffect(() => {
+    if (location.pathname === '/') {
+      setActiveFilter('all');
+    }
+  }, [location.pathname]);
+
+  const handleFilterClick = (filter: 'tutorial' | 'product') => {
+    setActiveFilter(filter);
+    // Scroll to featured section
+    featuredSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleShowAll = () => {
+    setActiveFilter('all');
+  };
+
+  // Card data
+  const cards = [
+    {
+      title: "Introduction to n8n Workflow Basics",
+      description: "A simple workflow demonstrating how to build a recruitment form that saves resumes to OneDrive and updates records in Microsoft Excel.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      level: "Beginner" as const,
+      duration: "2 hours",
+      isTutorial: true,
+      isFree: true,
+    },
+    {
+      title: "Software Engineering GPT Squad",
+      description: "Assist your software delivery with AI-agent bots that never tire, sleep or eat!",
+      image: "/media/BOT squad b.png",
+      level: "Intermediate" as const,
+      duration: "5-Agents",
+      isTutorial: false,
+      isFree: false,
+      isProduct: true,
+      isPaid: true,
+    },
+    {
+      title: "AI & Machine Learning",
+      description: "Dive deep into artificial intelligence algorithms, neural networks, and practical ML model deployment.",
+      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      level: "Advanced" as const,
+      duration: "10 weeks",
+      isTutorial: true,
+      isFree: false,
+      isPaid: true,
+    },
+    {
+      title: "Meet Agent Rekon - Requirements Analyst",
+      description: "Rekon is your helpful analyst who will help you manage your software requirements.",
+      image: "/media/rekon_analyst.png",
+      level: "Advanced" as const,
+      duration: "Single Agent",
+      isTutorial: false,
+      isFree: false,
+      isProduct: true,
+      isPaid: true,
+    },
+    {
+      title: "AI Roadmap Tutorial",
+      description: "A walkthrough of key topics that will help you better understand your own journey through the AI landscape.",
+      image: "/media/ai_roadmap.png",
+      level: "Intermediate" as const,
+      duration: "2 weeks",
+      isTutorial: true,
+      isFree: false,
+      isPaid: true,
+    },
+    {
+      title: "Meet Agent Cheka - Test Analyst",
+      description: "Cheka is an expert in testing and will help you compile tests for your project.",
+      image: "/media/cheka_tests.png",
+      level: "Advanced" as const,
+      duration: "Single Agent",
+      isTutorial: false,
+      isFree: false,
+      isProduct: true,
+      isPaid: true,
+    },
+  ];
+
+  // Filter cards based on active filter
+  const filteredCards = cards.filter(card => {
+    if (activeFilter === 'all') return true;
+    if (activeFilter === 'tutorial') return card.isTutorial;
+    if (activeFilter === 'product') return card.isProduct;
+    return true;
+  });
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
@@ -25,15 +120,18 @@ const Index = () => {
                 Master transforming your business processes by learning and implementing AI-powered workflows
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/courses" className="hero-button">
+                <button 
+                  onClick={() => handleFilterClick('tutorial')}
+                  className="hero-button"
+                >
                   Explore Courses
-                </Link>
-                <Link 
-                  to="/products"
+                </button>
+                <button 
+                  onClick={() => handleFilterClick('product')}
                   className="inline-flex h-12 items-center justify-center rounded-md border border-dynamous-300 bg-transparent px-6 text-lg font-medium text-dynamous-700 transition-colors hover:bg-dynamous-50"
                 >
                   Explore Products
-                </Link>
+                </button>
               </div>
               <div className="mt-8 flex items-center text-muted-foreground">
                 <div className="flex -space-x-2">
@@ -72,79 +170,80 @@ const Index = () => {
       </section>
 
       {/* Featured Courses Section */}
-      <section className="py-20 bg-background/80">
+      <section ref={featuredSectionRef} className="py-20 bg-background/80">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center text-center mb-12">
-            <h2 className="gradient-text mb-4">Featured Products and Courses</h2>
+            <h2 className="gradient-text mb-4">
+              {activeFilter === 'all' && "Featured Products and Courses"}
+              {activeFilter === 'tutorial' && "Featured Tutorials"}
+              {activeFilter === 'product' && "Featured Products"}
+            </h2>
             <p className="text-xl text-muted-foreground max-w-3xl">
-              Discover our most popular products and courses designed to help you master new skills and advance your career.
+              {activeFilter === 'all' && "Discover our most popular products and courses designed to help you master new skills and advance your career."}
+              {activeFilter === 'tutorial' && "Learn from our comprehensive tutorials designed to help you master new skills and workflows."}
+              {activeFilter === 'product' && "Explore our innovative AI-powered products designed to streamline your business processes."}
             </p>
+            
+            {/* Filter Buttons */}
+            <div className="flex gap-4 mt-6">
+              <button
+                onClick={handleShowAll}
+                className={cn(
+                  "px-4 py-2 rounded-md text-sm font-medium transition-colors",
+                  activeFilter === 'all'
+                    ? "bg-dynamous-600 text-white"
+                    : "bg-transparent border border-dynamous-300 text-dynamous-700 hover:bg-dynamous-50"
+                )}
+              >
+                All
+              </button>
+              <button
+                onClick={() => setActiveFilter('tutorial')}
+                className={cn(
+                  "px-4 py-2 rounded-md text-sm font-medium transition-colors",
+                  activeFilter === 'tutorial'
+                    ? "bg-dynamous-600 text-white"
+                    : "bg-transparent border border-dynamous-300 text-dynamous-700 hover:bg-dynamous-50"
+                )}
+              >
+                Tutorials
+              </button>
+              <button
+                onClick={() => setActiveFilter('product')}
+                className={cn(
+                  "px-4 py-2 rounded-md text-sm font-medium transition-colors",
+                  activeFilter === 'product'
+                    ? "bg-dynamous-600 text-white"
+                    : "bg-transparent border border-dynamous-300 text-dynamous-700 hover:bg-dynamous-50"
+                )}
+              >
+                Products
+              </button>
+            </div>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <CourseCard
-              title="Introduction to n8n Workflow Basics"
-              description="A simple workflow demonstrating how to build a recruitment form that saves resumes to OneDrive and updates records in Microsoft Excel."
-              image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              level="Beginner"
-              duration="2 hours"
-              isTutorial={true}
-              isFree={true}
-            />
-            <CourseCard
-              title="Software Engineering GPT Squad"
-              description="Assist your software delivery with AI-agent bots that never tire, sleep or eat!"
-              image="/media/BOT squad b.png"
-              level="Intermediate"
-              duration="5-Agents"
-              isTutorial={false}
-              isFree={false}
-              isProduct={true}
-              isPaid={true}
-            />
-            <CourseCard
-              title="AI & Machine Learning"
-              description="Dive deep into artificial intelligence algorithms, neural networks, and practical ML model deployment."
-              image="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              level="Advanced"
-              duration="10 weeks"
-            />
-            <CourseCard
-              title="Meet Agent Rekon - Requirements Analyst"
-              description="Rekon is your helpful analyst who will help you manage your software requirements."
-              image="/media/rekon_analyst.png"
-              level="Advanced"
-              duration="Single Agent"
-              isTutorial={false}
-              isFree={false}
-              isProduct={true}
-              isPaid={true}
-            />
-            <CourseCard
-              title="AI Roadmap Tutorial"
-              description="A walkthrough of key topics that will help you better understand your own journey through the AI landscape."
-              image="/media/ai_roadmap.png"
-              level="Intermediate"
-              duration="2 weeks"
-              isTutorial={true}
-              isFree={false}
-              isPaid={true}
-            />
-            <CourseCard
-              title="Meet Agent Cheka - Test Analyst"
-              description="Cheka is an expert in testing and will help you compile tests for your project."
-              image="/media/cheka_tests.png"
-              level="Advanced"
-              duration="Single Agent"
-              isTutorial={false}
-              isFree={false}
-              isProduct={true}
-              isPaid={true}
-            />
+            {filteredCards.map((card, index) => (
+              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <CourseCard
+                  title={card.title}
+                  description={card.description}
+                  image={card.image}
+                  level={card.level}
+                  duration={card.duration}
+                  isTutorial={card.isTutorial}
+                  isFree={card.isFree}
+                  isProduct={card.isProduct}
+                  isPaid={card.isPaid}
+                />
+              </div>
+            ))}
           </div>
           <div className="mt-12 text-center">
-            <Link to="/courses" className="hero-button">
-              View All Courses
-            </Link>
+            {activeFilter !== 'all' && (
+              <Button onClick={handleShowAll} className="hero-button">
+                View All
+              </Button>
+            )}
           </div>
         </div>
       </section>

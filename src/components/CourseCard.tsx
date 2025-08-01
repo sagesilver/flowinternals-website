@@ -33,7 +33,9 @@ const CourseCard = ({
     if (title === "Introduction to n8n Workflow Basics") {
       return "/n8n-workflow-basics.html";
     } else if (title === "Software Engineering GPT Squad") {
-      return "/gpt-bot-squad";
+      return "/courses"; // Coming Soon page
+    } else if (title === "AI & Machine Learning") {
+      return "/courses"; // Coming Soon page
     } else if (title === "Meet Agent Rekon - Requirements Analyst") {
       return "/rekon-analyst";
     } else if (title === "Meet Agent Cheka - Test Analyst") {
